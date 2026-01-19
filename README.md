@@ -1,1 +1,426 @@
-# CV
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaan Khan - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 50px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        
+        .contact-info {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .contact-info span {
+            margin: 0 15px;
+        }
+        
+        .content-wrapper {
+            padding: 40px 50px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .content p {
+            margin-bottom: 10px;
+            text-align: justify;
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .education-item, .achievement-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .education-item h3 {
+            font-size: 17px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .education-item .details {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            font-size: 14px;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateX(5px);
+            background: #e9ecef;
+        }
+        
+        .achievements-list, .interests-list {
+            list-style: none;
+        }
+        
+        .achievements-list li, .interests-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #555;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .achievements-list li::before, .interests-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 18px;
+        }
+        
+        .achievement-item strong {
+            color: #2c3e50;
+        }
+        
+        .action-buttons {
+            text-align: center;
+            padding: 30px 50px 40px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .action-buttons button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .action-buttons button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .action-buttons button.secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            box-shadow: none;
+        }
+        
+        .action-buttons button.secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .action-buttons {
+                display: none;
+            }
+            
+            .header {
+                background: #2c3e50;
+            }
+        }
+        
+        .editable {
+            background: #fff9c4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px dashed #fbc02d;
+            cursor: text;
+        }
+        
+        .editable:hover {
+            background: #fff59d;
+        }
+        
+        .share-link-section {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 50px;
+            text-align: center;
+        }
+        
+        .share-link-section h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .share-link-section p {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .link-display {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border: 2px solid #1976d2;
+            font-family: monospace;
+            word-break: break-all;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        .copy-message {
+            color: #2e7d32;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .copy-message.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <h1>AMAAN KHAN</h1>
+            <div class="subtitle">Year 10 Student – King Edward VI Aston School</div>
+            <div class="contact-info">
+                <span>📧 <span class="editable" id="email">[your.email@example.com]</span></span>
+                <span>|</span>
+                <span>📱 <span class="editable" id="phone">[your phone number]</span></span>
+            </div>
+        </div>
+
+        <div class="share-link-section">
+            <h3>🔗 Share This CV Online</h3>
+            <p>Copy this link and paste it in your emails to HSBC, ZSP Partnership, and other companies:</p>
+            <div class="link-display" id="shareLink">Loading...</div>
+            <button onclick="copyLink()" style="background: #1976d2; color: white; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: 600;">
+                📋 Copy Link
+            </button>
+            <div class="copy-message" id="copyMessage">✓ Link copied! Paste it in your emails</div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2 class="section-title">Personal Statement</h2>
+                <div class="content">
+                    <p>Motivated and hardworking Year 10 student with a strong interest in business, economics, and mathematics. Enthusiastic about gaining practical experience in the workplace to develop skills in finance, business operations, and teamwork. Committed, reliable, and eager to contribute and learn in a professional environment.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3>King Edward VI Aston School – Year 10 (2026)</h3>
+                    <div class="details">
+                        <p><strong>Completed Qualification:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Islamic Studies (IGCSE) – Grade B</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong>Predicted GCSE Grades:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Mathematics – <span class="editable">[Predicted Grade]</span></li>
+                            <li>English Language – <span class="editable">[Predicted Grade]</span></li>
+                            <li>Science – <span class="editable">[Predicted Grade]</span></li>
+                            <li>Business Studies – <span class="editable">[Predicted Grade]</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="content">
+                    <div class="skills-grid">
+                        <div class="skill-item">Strong numeracy and analytical skills</div>
+                        <div class="skill-item">Microsoft Office (Word, Excel, PowerPoint)</div>
+                        <div class="skill-item">Teamwork and communication</div>
+                        <div class="skill-item">Organisation and time management</div>
+                        <div class="skill-item">Problem-solving abilities</div>
+                        <div class="skill-item">Adaptability and willingness to learn</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Achievements & Extracurricular Activities</h2>
+                <div class="content">
+                    <ul class="achievements-list">
+                        <li><strong>Football:</strong> Played for local club for 3 years, demonstrating commitment and teamwork</li>
+                        <li><strong>Swimming:</strong> Achieved Stage 5 certification</li>
+                        <li><strong>Sailing:</strong> Earned certificate of achievement</li>
+                        <li><strong>House Events:</strong> Actively competed in multiple school competitions</li>
+                        <li><strong>Junior Maths Challenge:</strong> Participated in national mathematics competition</li>
+                        <li><strong>Bebras Challenge:</strong> Competed in computational thinking challenge</li>
+                        <li><strong>Islamic Studies IGCSE:</strong> Achieved Grade B, demonstrating academic dedication</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Interests</h2>
+                <div class="content">
+                    <ul class="interests-list">
+                        <li>Following business, economics, and finance trends</li>
+                        <li>Sports: Football, swimming, and sailing</li>
+                        <li>Problem-solving and logic challenges</li>
+                        <li>Entrepreneurship and business innovation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">References</h2>
+                <div class="content">
+                    <p>Available upon request</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+            <button class="secondary" onclick="copyLink()">📋 Copy Shareable Link</button>
+        </div>
+    </div>
+
+    <script>
+        // Generate shareable link
+        function generateShareLink() {
+            const currentUrl = window.location.href;
+            document.getElementById('shareLink').textContent = currentUrl;
+        }
+        
+        // Copy link to clipboard
+        function copyLink() {
+            const linkText = document.getElementById('shareLink').textContent;
+            navigator.clipboard.writeText(linkText).then(() => {
+                const message = document.getElementById('copyMessage');
+                message.classList.add('show');
+                setTimeout(() => {
+                    message.classList.remove('show');
+                }, 3000);
+            });
+        }
+        
+        // Make editable fields clickable
+        document.querySelectorAll('.editable').forEach(field => {
+            field.contentEditable = true;
+            field.addEventListener('focus', function() {
+                if (this.textContent.startsWith('[')) {
+                    this.textContent = '';
+                }
+            });
+        });
+        
+        // Initialize on page load
+        window.onload = function() {
+            generateShareLink();
+        };
+    </script>
+</body>
+</html># CV
